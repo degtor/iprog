@@ -1,0 +1,87 @@
+/* Classes */
+
+/* home.html bakgrund */
+.home-start {
+	background-image: url("images/family.jpg");
+	height: 100%;
+}
+
+/* selectdish.html bakgrund */
+.backimg {
+	background-image: url("images/food.jpg");
+	height: 100%;
+}
+
+/* Rubrik för inline */
+.headtext {
+	font-size: 2.6em;
+	font-weight: bold;
+	margin-bottom: 2em;
+}
+
+/* Lilla under-headern där man väljer starter/maib/dessert etc. */
+.selection {
+	background: rgba(255, 255, 255, 0.6);
+}
+
+/* Lilla bilden med maträtter */
+.dish {
+	background: rgba(255, 255, 255, 0.6);
+	padding: 0.5em;
+}
+
+/* Sidebar i övriga sidor */
+.sidebar {
+	background: rgba(255, 255, 255, 1);
+	padding: 0.5em;
+	height: 100%;
+}
+
+/* IDs */
+
+#header {
+	/* Överrubrik och tagline */
+	margin-top: 2%;
+	padding: 1em;
+	background: rgba(255, 255, 51, 0.6);
+	margin-bottom: 2em;
+}
+
+#info {
+	/* Lilla infolådan på home.html */
+	margin-top: 8%;
+	margin-bottom: 40%;
+	background: rgba(255, 255, 255, 0.6);
+	padding: 1em;
+}
+
+/* Bootstrap business */
+
+/* Dropdown visas i rad med annat */
+.dropdown {
+	display: inline-block; 
+}
+
+/* Försök med fem kolumner */
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
