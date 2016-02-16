@@ -8,4 +8,5 @@ $(function() {
 	var selectDish = new SelectDish($("#selectdish"), model);
 	var dishDeets = new DishDeets($("#dishdeets"), model);
 	var sumMenu = new SumMenu($("#summenu"), model);
+	var fullPrep = new FullPrep($("#fullprep"), model);
 });
