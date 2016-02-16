@@ -4,14 +4,14 @@ var SelectDish = function (container, model) {
 	availableMains = model.getAllDishes("main dish");
 
 	for (i=0; i < availableStarters.length; i++) {
-		dishesDiv.append("<div class=\"col-md-3 dish\">" + availableStarters[i].name + "<img src=\"images/toast.jpg\">" + "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non pellentesque nibh.</p>" + "</div>");
+		dishesDiv.append("<div class=\"col-md-3 dish\">" + availableStarters[i].name + "<img src=\"images/" + availableStarters[i].image + "\"" + ">" + "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non pellentesque nibh.</p>" + "</div>");
 	}
 
 	for (i=0; i < availableMains.length; i++) {
-		dishesDiv.append("<div class=\"col-md-3 dish\">" + availableMains[i].name + "<img src=\"images/toast.jpg\">" + "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non pellentesque nibh.</p>" + "</div>");
+		dishesDiv.append("<div class=\"col-md-3 dish\">" + availableMains[i].name + "<img src=\"images/" + availableMains[i].image + "\"" + ">" + "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non pellentesque nibh.</p>" + "</div>");
 	}
 
-}
+};
 
 /*
 				<div class="col-md-3 dish">

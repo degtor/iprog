@@ -10,4 +10,3 @@ var ExampleView = function (container, model) {
 	this.numberOfGuests.html(model.getNumberOfGuests());
 	
 }
- 
