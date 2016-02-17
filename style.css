@@ -22,19 +22,27 @@
 /* Lilla under-headern där man väljer starter/maib/dessert etc. */
 .selection {
 	background: rgba(255, 255, 255, 0.6);
+	padding: 1em;
 }
 
 /* Lilla bilden med maträtter */
 .dish {
-	background: rgba(255, 255, 255, 0.6);
+	/* background: rgba(255, 255, 255, 0.6); */
 	padding: 0.5em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 /* Sidebar i övriga sidor */
 .sidebar {
-	background: rgba(255, 255, 255, 1);
+	background: rgba(255, 255, 255, 0.6);
 	padding: 0.5em;
 	height: 100%;
+}
+
+.bg {
+	background: rgba(255, 255, 255, 0.6);
+	margin-bottom: 1em;
 }
 
 /* IDs */
