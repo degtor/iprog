@@ -9,4 +9,7 @@ $(function() {
 	var dishDeets = new DishDeets($("#dishdeets"), model);
 	var sumMenu = new SumMenu($("#summenu"), model);
 	var fullPrep = new FullPrep($("#fullprep"), model);
+
+	//Lägg till en sidebar-Controller och skicka med den här instansen av sidebarobjekt + den här instansen av model.
+	var sideCtrl = new SideCtrl(sideBar, model);
 });
