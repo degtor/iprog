@@ -1,9 +1,9 @@
-var DishDeets = function (container, model) {
+var DishDeets = function (container, model, selDishCtrl) {
     var selDishDiv = container;
     var selectedDish = model.getDish(1); // This should later be retrieved from selectDish object.
     var dishIngredients = selectedDish.ingredients;
 
-    selDishDiv.append("<div class=\"col-md-6 dish\">" + "<h3>" + selectedDish.name + "</h3>"
+    selDishDiv.append("<div class=\"col-md-6 dishdeet\">" + "<h3>" + selectedDish.name + "</h3>"
         + "<img src=\"images/" + selectedDish.image + "\"" + ">"
         + "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non pellentesque nibh.</p>"
         + "<button type='button' class='btn btn-warning'>Back to select Dish</button>");

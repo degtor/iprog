@@ -9,3 +9,4 @@ var SideCtrl = function(view, model) {
 	});
 
 };
+	

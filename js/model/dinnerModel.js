@@ -4,12 +4,8 @@ var DinnerModel = function() {
 	this.menu = [];
 	this.numberOfGuests = 4; // Default number of guests.
 
-	// "this" http://www.w3schools.com/js/js_object_definition.asp
-	// Good learn example from course : https://github.com/kth-csc-iprog/basic-draw-app-html-js/blob/master/jsonly/js/model/model.js
-	// ************* Observable *********** http://bumbu.me/javascript-observer-publish-subscribe-pattern/
-	// _underscore declares private variable. Convention in javascript syntax.
+	 // ** OBSERVER **
 	this._observers = [];
-
 	this.addObserver = function(observer) {
 			this._observers.push(observer);
 		};
@@ -21,6 +17,7 @@ var DinnerModel = function() {
 				//Varje view i observern har en update-metod som gör ändringarna.
 			}
 		};
+	 // ** END OBSERVER **
 
 	this.setNumberOfGuests = function(num) {
 		if (num>0) {
@@ -332,7 +329,7 @@ var DinnerModel = function() {
 			'price':4
 			}]
 		},{
-		'id':102,
+		'id':103,
 		'name':'MD 4',
 		'type':'main dish',
 		'image':'meatballs.jpg',
