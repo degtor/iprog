@@ -7,8 +7,15 @@ var WelcomeView = function(container) {
        });
 
         $("#selectdish").delegate(".dish", "click", function(event) {
-            $("#selectDishType").remove();
+			$("#selectDishType").hide();
             $("#dishdeets").show();
+        });
+		
+        $("#dishdeets").delegate("#backToSelectDish", "click", function(event) {
+            $("#dishdeets").hide();
+            $("#selectDishType").show();
+			$(".dishdeet").remove();
+			$(".ingredients").remove();
         });
     });
 };

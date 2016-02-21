@@ -1,19 +1,25 @@
-var DishDeets = function (container, model, selDishCtrl) {
+var DishDeets = function (container, model) {
     var selDishDiv = container;
-    var selectedDish = model.getDish(1); // This should later be retrieved from selectDish object.
-    var dishIngredients = selectedDish.ingredients;
+	
+	$("#selectdish").delegate(".dish", "click", function (event) {
+		var clickedElementId = event.currentTarget.id;
+		var selectedDish = model.getDish(clickedElementId);  // This should later be retrieved from selectDish object.
+	    var dishIngredients = selectedDish.ingredients;
+		
+	
 
     selDishDiv.append("<div class=\"col-md-6 dishdeet\">" + "<h3>" + selectedDish.name + "</h3>"
         + "<img src=\"images/" + selectedDish.image + "\"" + ">"
         + "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non pellentesque nibh.</p>"
-        + "<button type='button' class='btn btn-warning'>Back to select Dish</button>");
+        + "<button id='backToSelectDish' type='button' class='btn btn-warning'>Back to select Dish</button>");
 
     selDishDiv.append("<div id='ingredientsTable' class='col-md-6 ingredients'>" + "<h3>Ingredients for 4 people</h3>" + "<hr />"
 + "<table id='dishIngredients' style='width:100%'>");
 
-    var tablezor = container.find("#dishIngredients");
+	
 
     for (i = 0; i < dishIngredients.length; i++) {
+		 var tablezor = container.find("#dishIngredients");
          tablezor.append("<tr>"
              + "<td>" + dishIngredients[i].quantity + "</td>"
              + "<td>" + dishIngredients[i].unit + "</td>"
@@ -27,6 +33,7 @@ var DishDeets = function (container, model, selDishCtrl) {
         + "<tr><td><button type='button' class='btn btn-warning'>Confirm dish</button></td>"
         + "<td colspan='2'></td>"
         + "<td>SEK</td>" + "<td>" + model.getDishPrice(selectedDish) +"</td>" + "</tr>");
+	});
 };
 
 
