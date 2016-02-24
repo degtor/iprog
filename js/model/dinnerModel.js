@@ -35,7 +35,7 @@ var DinnerModel = function() {
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
 		if (this.menu < 1) {
-			return "Menu is empty!"
+			return "Menu is empty!";
 		} else {
 			for(var each in this.menu) {
 				if(type === this.menu[each].type) {
@@ -51,7 +51,7 @@ var DinnerModel = function() {
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
 		if (this.menu < 1) {
-			return "Menu is empty!"
+			return "Menu is empty!";
 		} else {
 			return this.menu;
 		}
@@ -123,7 +123,7 @@ var DinnerModel = function() {
 
 	//function that returns a dish of specific ID
 	this.getDish = function (id) {
-	  for(key in dishes){
+	  for(var key in dishes){
 			if(dishes[key].id == id) {
 				this.notifyObservers(dishes[key]);
 				return dishes[key];
@@ -133,7 +133,7 @@ var DinnerModel = function() {
 
 	this.getDishPrice = function (dish) {
 		dishPrice = 0;
-		for(i in dish.ingredients) {
+		for(var i in dish.ingredients) {
 			dishPrice += dish.ingredients[i].price;
 		}
 		return dishPrice;

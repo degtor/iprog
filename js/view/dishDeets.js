@@ -32,11 +32,11 @@ var DishDeets = function (container, model, selDishCtrl) {
                  + "<td>    SEK                         </td>"
                  + "<td>" + dishIngredients[i].price + "</td>"
              + "</tr>");
-        };
+        }
 
         tablezor.append("<tr><td colspan='5'><hr /></td></tr>"
             + "<tr><td><button type='button' class='btn btn-warning' id='appenddish'>Confirm dish</button></td>"
             + "<td colspan='2'></td>"
             + "<td>SEK</td>" + "<td>" + model.getDishPrice(selectedDish) +"</td>" + "</tr>");
-    }
+    };
 };
