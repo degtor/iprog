@@ -88,6 +88,7 @@ var DinnerModel = function() {
 			} 
 		}
 		this.menu.push(dishToAdd);
+		this.notifyObservers(dishToAdd);
 	
 	};
 		//TODO Lab 2 
@@ -124,6 +125,7 @@ var DinnerModel = function() {
 	this.getDish = function (id) {
 	  for(key in dishes){
 			if(dishes[key].id == id) {
+				this.notifyObservers(dishes[key]);
 				return dishes[key];
 			}
 		}

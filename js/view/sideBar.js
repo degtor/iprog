@@ -1,8 +1,4 @@
 var SideBar = function (container, model) {
-
-	model.addDishToMenu(1);
-	model.addDishToMenu(101);
-	model.addDishToMenu(201);
 	menu = model.getFullMenu();
 	guests = model.getNumberOfGuests();
 
@@ -18,19 +14,19 @@ var SideBar = function (container, model) {
 		}
 	});
 
-  	for(var i = 0; i < menu.length; i++) {
-
-  			$(table).append("<tr>" + "<td>" + menu[i].name + "</td>" + "<td>" + model.getDishPrice(menu[i]) + "</td>" + "</tr>");
+	this.writeDishes = function() {
+		if(model.menu.length > 0) {
+			$(table).empty();
+			for (var i in model.menu) {
+	  			$(table).append("<tr>" + "<td>" + model.menu[i].name + "</td>" + "<td>" + model.getDishPrice(model.menu[i]) + "</td>" + "</tr>");
+			}
 		}
-
-	//För upppdatering av värdet
-	var totalPrice = function() {
-		$(total).html(model.getTotalMenuPrice());
 	};
 
-	$(document).ready(function() {
-		totalPrice();
-	});
+	//För upppdatering av värdet
+	this.totalPrice = function() { 
+		$(total).html(model.getTotalMenuPrice());
+	};
 
 	// ** OBSERVERSTUFF **
 
@@ -39,7 +35,8 @@ var SideBar = function (container, model) {
 
 	//Observerhanteraren kör denna metoden när den fått ett notifyObservers()-anrop
 	this.update = function(object) {
-		totalPrice();
+		this.totalPrice();
+		this.writeDishes(); 
 	};
 
 
