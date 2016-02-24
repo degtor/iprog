@@ -2,7 +2,7 @@ var SelectDish = function (container, model) {
 	var dishesDiv = container;
 	var lol = this.displayedDishTypes = container.find("#dishtype");
 	var onClickDiv = this.onClickDiv = container.find("#selectdish");
-	console.log(onClickDiv);
+	//console.log(onClickDiv);
 
 
 	// Shows available courses for each dish type
@@ -22,8 +22,5 @@ var SelectDish = function (container, model) {
 				}
 		});
 	});
-
-	//
-
 
 };
