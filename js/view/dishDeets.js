@@ -3,6 +3,9 @@ var DishDeets = function (container, model, selDishCtrl) {
     var selDishDiv = container;
     this.dishID = 0;
 
+    //När update kallas av observer, gör variabler utifrån DISH-objekt.
+    //Dish-objekt kommer från anropet addDishToMenu i Model som skickar med vilken dish som addats
+    //Kör sen utskriften.
     this.update = function(dish) {
         selectedDish = dish;
         dishIngredients = dish.ingredients;

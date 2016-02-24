@@ -8,6 +8,7 @@ var DishDeetsCtrl = function(view, model) {
 
 		$("body").on("click", "#appenddish", function() {
 			$("#selectDishType").show();
+			//Här lägger vi till dish i Model-arrayen.
 			model.addDishToMenu(view.dishID);
 			$("#dishdeets").empty();
 		});

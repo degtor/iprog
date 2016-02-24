@@ -14,6 +14,7 @@ var SideBar = function (container, model) {
 		}
 	});
 
+	//Om meny-arrayen i model innehåller någonting, skriv ut vad.
 	this.writeDishes = function() {
 		if(model.menu.length > 0) {
 			$(table).empty();
