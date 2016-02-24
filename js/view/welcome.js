@@ -1,15 +1,12 @@
-var WelcomeView = function(container) {
+var WelcomeView = function(model) {
 
     $(document).ready(function(){
         $("#join").click(function(){
             $("#info").remove();
             $("#showDish").show();
+            model.emptyMenu();
        });
 
-        $("#selectdish").delegate(".dish", "click", function(event) {
-			$("#selectDishType").hide();
-            $("#dishdeets").show();
-        });
 		
         $("#dishdeets").delegate("#backToSelectDish", "click", function(event) {
             $("#dishdeets").hide();

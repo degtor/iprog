@@ -2,10 +2,11 @@ var FullPrep = function (container, model) {
     var dishesDiv = container;
 
     /* GHOST DATA */
-    model.setNumberOfGuests(1);
+    /*model.setNumberOfGuests(1);
     model.addDishToMenu(1);
     model.addDishToMenu(101);
     model.addDishToMenu(201);
+    var menu = model.getFullMenu();*/
     var menu = model.getFullMenu();
 
 

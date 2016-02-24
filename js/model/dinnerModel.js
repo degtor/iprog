@@ -34,7 +34,7 @@ var DinnerModel = function() {
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
-		if (this.menu < 1) {
+		if (this.menu.length < 1) {
 			return "Menu is empty!"
 		} else {
 			for(var each in this.menu) {
@@ -50,7 +50,7 @@ var DinnerModel = function() {
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
-		if (this.menu < 1) {
+		if (this.menu.length < 1) {
 			return "Menu is empty!"
 		} else {
 			return this.menu;
@@ -66,6 +66,11 @@ var DinnerModel = function() {
 			}
 		}
 		return sumIngredients;
+	};
+
+	this.emptyMenu = function() {
+		this.menu = [];
+		return this.menu;
 	};
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
@@ -88,6 +93,7 @@ var DinnerModel = function() {
 			} 
 		}
 		this.menu.push(dishToAdd);
+		this.notifyObservers();
 	
 	};
 		//TODO Lab 2 

@@ -3,9 +3,8 @@ var DishDeets = function (container, model) {
 	
 	$("#selectdish").delegate(".dish", "click", function (event) {
 		var clickedElementId = event.currentTarget.id;
-		var selectedDish = model.getDish(clickedElementId);  // This should later be retrieved from selectDish object.
+		var selectedDish = this.selectedDish = model.getDish(clickedElementId);  // This should later be retrieved from selectDish object.
 	    var dishIngredients = selectedDish.ingredients;
-		
 	
 
     selDishDiv.append("<div class=\"col-md-6 dishdeet\">" + "<h3>" + selectedDish.name + "</h3>"
