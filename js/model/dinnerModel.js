@@ -1,54 +1,40 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
 	
-	// "this" http://www.w3schools.com/js/js_object_definition.asp
-	// Good learn example from course : https://github.com/kth-csc-iprog/basic-draw-app-html-js/blob/master/jsonly/js/model/model.js
-	// ************* Observable *********** http://bumbu.me/javascript-observer-publish-subscribe-pattern/
-	// _underscore declares private variable. Convention in javascript syntax.
-	this._observers = [];
+	this.menu = [];
+	this.numberOfGuests = 4; // Default number of guests.
 
-	this.addObserver = function(observer) 
-		{
+	 // ** OBSERVER **
+	this._observers = [];
+	this.addObserver = function(observer) {
 			this._observers.push(observer);
 		};
 
-	this.notifyObservers = function(arg) 
-		{
+	this.notifyObservers = function(arg) {
 			for(var i=0; i<this._observers.length; i++) 
 			{
 				this._observers[i].update(arg);
-			}	
+				//Varje view i observern har en update-metod som gör ändringarna.
+			}
 		};
-	
-	//**********************************************
-	
-	// Other model data 
-	// a function that changes the observable so it will notify someFunction(someParam){....this.notify(someEvent); ...}
-	
-	//model.attach(function(model,args){
-	//Do something with model and args
-		// }); 
-	
-	//TODO Lab 2 implement the data structure that will hold number of guest
-	// and selected dinner options for dinner menu
-
-	this.menu = [];
-	this.numberOfGuests = 3; // Default number of guests.
+	 // ** END OBSERVER **
 
 	this.setNumberOfGuests = function(num) {
 		if (num>0) {
 			this.numberOfGuests = num;
+			//Om setNumberOfGuests kallas så ska också observern kallas så att viewen kan uppdateras.
+			this.notifyObservers();
 		}
 	};
 
-	// should return 
+	// should return
 	this.getNumberOfGuests = function() {
 		return this.numberOfGuests;
 	};
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
-		if (this.menu < 1) {
+		if (this.menu.length < 1) {
 			return "Menu is empty!"
 		} else {
 			for(var each in this.menu) {
@@ -64,7 +50,7 @@ var DinnerModel = function() {
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
-		if (this.menu < 1) {
+		if (this.menu.length < 1) {
 			return "Menu is empty!"
 		} else {
 			return this.menu;
@@ -80,6 +66,11 @@ var DinnerModel = function() {
 			}
 		}
 		return sumIngredients;
+	};
+
+	this.emptyMenu = function() {
+		this.menu = [];
+		return this.menu;
 	};
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
@@ -102,6 +93,7 @@ var DinnerModel = function() {
 			} 
 		}
 		this.menu.push(dishToAdd);
+		this.notifyObservers();
 	
 	};
 		//TODO Lab 2 
@@ -343,7 +335,7 @@ var DinnerModel = function() {
 			'price':4
 			}]
 		},{
-		'id':102,
+		'id':103,
 		'name':'MD 4',
 		'type':'main dish',
 		'image':'meatballs.jpg',
