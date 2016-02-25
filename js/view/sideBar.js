@@ -22,7 +22,7 @@ var SideBar = function (container, model) {
 		menu = model.getFullMenu();
 		for (var i = 0; i < menu.length; i++) {
 			if (menu === "Menu is empty!") {
-				break
+				break;
 			} else {
 				$(table).append("<tr>" + "<td>" + menu[i].name + "</td>" + "<td>" + model.getDishPrice(menu[i]) + "</td>" + "</tr>");
 			}

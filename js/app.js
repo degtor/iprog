@@ -8,14 +8,18 @@ $(function() {
 	var dishDeets = new DishDeets($("#dishdeets"), model);
 
 	//Lägg till en sidebar-Controller och skicka med den här instansen av sidebarobjekt + den här instansen av model.
-	var sideCtrl = new SideCtrl(sideBar, model);
-	var selDishCtrl = new SelDishCtrl(selectDish, model);
-	var dishDeetsCtrl = new DishDeetsCtrl(sideBar, model);
+	var overallState = new OverallState();
+	var sideCtrl = new SideCtrl(sideBar, model, overallState);
+	var selDishCtrl = new SelDishCtrl(selectDish, model, overallState);
+	var dishDeetsCtrl = new DishDeetsCtrl(sideBar, model, overallState);
+	var selectionCtrl = new SelectionCtrl(overallState);
+	var welcomeCtrl = new WelcomeCtrl(overallState, selectionCtrl);
 
+/*
 	$("#join").click(function(){
 		$("#info").remove();
 		$("#showDish").show();
-	});
+	}); */
 
 	$("#selectdish").delegate(".dish", "click", function (event) {
 		$("#selectDishType").hide();
