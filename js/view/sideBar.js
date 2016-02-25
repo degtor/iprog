@@ -1,5 +1,17 @@
 var SideBar = function (container, model) {
 
+	var table = this.selectedDishes = container.find("#selectedDishes");
+	var total = this.total = container.find("#total");
+	guests = model.getNumberOfGuests();
+
+	this.displayedGuests = container.find("#guests");
+
+	$(this.displayedGuests).children("option").each(function() {
+		if(this.value == guests) {
+			$(this).attr("selected", "selected");
+		}
+	});
+
 	//För upppdatering av värdet
 	var totalPrice = function() {
 		$(total).html(model.getTotalMenuPrice());
@@ -17,10 +29,8 @@ var SideBar = function (container, model) {
 		}
 	};
 
-	$(document).ready(function() {
-		totalPrice();
-		menuStuff();
-	});
+	totalPrice();
+	menuStuff();
 
 	// ** OBSERVERSTUFF **
 
@@ -32,22 +42,6 @@ var SideBar = function (container, model) {
 		totalPrice();
 		menuStuff();
 	};
-
-
-	console.log(model.menu);
-	guests = model.getNumberOfGuests();
-
-	var table = this.selectedDishes = container.find("#selectedDishes");
-	var total = this.total = container.find("#total");
-
-	this.displayedGuests = container.find("#guests"); //Take a look at this constructor bizz
-
-	//Loopar igenom dropdownlistans "option"-barn och lägger till SELECTED-attributet i htmlen
-	$(this.displayedGuests).children("option").each(function() {
-		if(this.value == guests) {
-			$(this).attr("selected", "selected");
-		}
-	});
-
 };
+
 

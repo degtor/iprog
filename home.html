@@ -54,7 +54,7 @@
 					</tr>
 				</table>
 				<h3 >Total $</h3><p id="total"></p>
-				<button type="button" class="btn btn-warning">Confirm dinner</button>
+				<button id="confirmdinner" type="button" class="btn btn-warning">Confirm dinner</button>
 			</div>
 
 			<div class="col-md-8" id="selectDishType">
@@ -78,6 +78,27 @@
 			<div class="col-md-10" id="dishdeets">
 			</div>
 
+			<div id="summenurow" class="row">
+				<div class="col-md-12" style="background:#666;">
+					<h2 style="float:left;">My dinner: 4 People</h2>
+					<button type="button" class="btn btn-warning" style="float:right; margin-top:15px;">Go back and edit dinner</button>
+				</div>
+				<div class="col-md-12" style="background:#FFF;">
+					<div class="col-md-10 col-md-offset-2" id="summenu" style="padding:10px;">
+					</div>
+					<div class="col-md-8 col-md-offset-2">
+						<hr />
+					</div>
+					<div class="col-md-12 text-center">
+						<button id="printRecipe" type="button" class="btn btn-warning"style="margin-top:15px;">Print full recipe</button>
+					</div>
+				</div>
+			</div>
+			<div id="fullprepcontainer" class="col-md-12" style="background:#FFF;">
+				<div class="col-md-12" id="fullprep" style="padding:10px;">
+				</div>
+			</div>
+
 		</div>
 	</div>
 
@@ -90,12 +111,12 @@
 	<script src="js/app.js"></script>
 	<script src="js/model/dinnerModel.js"></script>
 	<script src="js/view/sumMenu.js"></script>
-	<script src="js/view/welcome.js"></script>
 	<script src="js/view/sideBar.js"></script>
 	<script src="js/view/fullPrep.js"></script>
 	<script src="js/view/selectDish.js"></script>
 	<script src="js/view/dishDeets.js"></script>
 	<script src="js/controller/sideBarController.js"></script>
+	<script src="js/controller/dishDeetsController.js"></script>
 	<script src="js/controller/selDishController.js"></script>
   </body>
 </html>

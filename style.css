@@ -83,7 +83,19 @@
 	width:100px;
 }
 
+#summenurow {
+	display:none;
+}
+
+#selectedDishes {
+	width:100%;
+}
+
 #showDish {
+	display:none;
+}
+
+#fullprepcontainer {
 	display:none;
 }
 
