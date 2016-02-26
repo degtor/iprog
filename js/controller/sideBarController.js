@@ -1,4 +1,4 @@
-var SideCtrl = function(view, model) {
+var SideCtrl = function(overallState, view, model) {
 
 	$("#sidebar").delegate("#confirmdinner", "click", function (event) {
 		$("#sidebar").hide();

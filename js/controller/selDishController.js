@@ -1,11 +1,11 @@
-var SelDishCtrl = function(view, model, overallState, dishDeetsCtrl) {
+var SelDishCtrl = function(overallState, view, model) {
     var sel = this;
     this.hideMe = function() {
         $("#selectdish").hide();
     };
 
     $("#selectdish").delegate(".dish", "click", function (event) {
-        overallState.initCtrl(sel, dishDeetsCtrl);
+        overallState.initCtrl(sel, overallState.dishDeetsCtrl);
     });
 
     // Event listener

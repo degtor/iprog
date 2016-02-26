@@ -1,4 +1,4 @@
-var DishDeetsCtrl = function(view, model, overallState, selectionControl) {
+var DishDeetsCtrl = function(overallState, view, model) {
 	var dishDeet = this;
 
 	this.init = function() {
@@ -15,11 +15,11 @@ var DishDeetsCtrl = function(view, model, overallState, selectionControl) {
 		var clickedElementId = event.currentTarget.id;
 		var selDish = model.getDish(clickedElementId);
 		model.addDishToMenu(selDish.id);
-		overallState.initCtrl(dishDeet, selectionControl);
+		overallState.initCtrl(dishDeet, overallState.selectionCtrl);
 	});
 
 	$("#dishdeets").delegate("#backToSelectDish", "click", function() {
-		overallState.initCtrl(dishDeet, selectionControl);
+		overallState.initCtrl(dishDeet, overallState.selectionCtrl);
 	});
 
 };

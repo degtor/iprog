@@ -1,8 +1,8 @@
-var WelcomeCtrl = function(overallState, selectionCtrl) {
+var WelcomeCtrl = function(overallState, model) {
 	var welcome = this;
 
 	$("#join").click(function() {
-		overallState.initCtrl(welcome, selectionCtrl);
+		overallState.initCtrl(welcome, overallState.selectionCtrl);
 	});
 
 	this.hideMe = function() {

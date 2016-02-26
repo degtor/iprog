@@ -1,4 +1,4 @@
-var FullPrepCtrl = function(overallState, selectionCtrl) {
+var FullPrepCtrl = function(overallState, view, model) {
 	var prep = this;
 
 	this.init = function() {
@@ -10,6 +10,6 @@ var FullPrepCtrl = function(overallState, selectionCtrl) {
 	};
 
 	$("#backtosum").click(function() {
-		overallState.initCtrl(prep, selectionCtrl);
+		overallState.initCtrl(prep, overallState.sumMenuCtrl);
 	});
 };
