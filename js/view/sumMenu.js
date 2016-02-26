@@ -1,7 +1,13 @@
 var SumMenu = function (container, model) {
+    model.addObserver(this);
     var dishesDiv = container;
     menu = model.getFullMenu();
 
+    this.update = function(object) {
+        this.drawView();
+    };
+
+    this.drawView = function() {
         if (menu === "Menu is empty!") {
             dishesDiv.append("<p>You have not selected any dishes</p>");
         } else {

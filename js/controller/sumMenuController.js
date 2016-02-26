@@ -1,14 +1,12 @@
-var SumMenuCtrl = function(overallState, view, model) {
+var SumMenuCtrl = function(overallState, model) {
 	var summenu = this;
 
 	this.init = function() {
 		$("#summenu").show();
 		$("#summenurow").show();
-		view.drawView();
 	};
 
 	this.hideMe = function() {
-		$("#summenu").empty();
 		$("#summenu").hide();
 		$("#summenurow").hide();
 	};

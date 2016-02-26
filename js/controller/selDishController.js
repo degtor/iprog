@@ -1,5 +1,12 @@
 var SelDishCtrl = function(overallState, view, model) {
     var sel = this;
+    /* model.addObserver(this); */
+
+/*
+    this.update = function(object) {
+        this.listen();
+    }; */
+
     this.hideMe = function() {
         $("#selectdish").hide();
     };
@@ -9,7 +16,8 @@ var SelDishCtrl = function(overallState, view, model) {
     });
 
     // Event listener
-    this.listen = function() {
+
+    this.listen = function() { 
         $("#dishtype").change(function(){
             var selectedType = $("#dishtype option:selected").text();
             var availableCourses = model.getAllDishes(selectedType);
