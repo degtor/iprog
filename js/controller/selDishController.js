@@ -1,11 +1,5 @@
 var SelDishCtrl = function(overallState, view, model) {
     var sel = this;
-    /* model.addObserver(this); */
-
-/*
-    this.update = function(object) {
-        this.listen();
-    }; */
 
     this.hideMe = function() {
         $("#selectdish").hide();

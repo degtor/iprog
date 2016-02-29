@@ -11,6 +11,7 @@ var SumMenu = function (container, model) {
         if (menu === "Menu is empty!") {
             dishesDiv.append("<p>You have not selected any dishes</p>");
         } else {
+            dishesDiv.empty();
             for (var i = 0; i < menu.length; i++) {
                 dishesDiv.append("<div class='col-md-2 menuDish' style='border: solid #000000; padding:10px; margin-left:20px;'>"
                     + "<img style='width:100%; height:100px;' src=\"images/" + menu[i].image + "\"" + ">"

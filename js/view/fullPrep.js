@@ -11,6 +11,7 @@ var FullPrep = function (container, model) {
         if (menu === "Menu is empty!") {
             dishesDiv.append("<p>You have not selected any dishes</p>");
         } else {
+            dishesDiv.empty();
             for (var i = 0; i < menu.length; i++) {
                 dishesDiv.prepend("<div class='row'>"
                     + "<div class='col-md-12 menuDish' style='padding:10px; margin-left:20px;'>"

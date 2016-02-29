@@ -2,13 +2,13 @@ var SumMenuCtrl = function(overallState, model) {
 	var summenu = this;
 
 	this.init = function() {
-		$("#summenu").show();
 		$("#summenurow").show();
+		$("#summenu").show();
 	};
 
 	this.hideMe = function() {
-		$("#summenu").hide();
 		$("#summenurow").hide();
+		$("#summenu").hide();
 	};
 
 	$("#printRecipe").click(function() {
