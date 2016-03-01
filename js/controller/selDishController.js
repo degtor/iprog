@@ -1,7 +1,17 @@
-var SelDishCtrl = function(view, model) {
+var SelDishCtrl = function(overallState, view, model) {
+    var sel = this;
+
+    this.hideMe = function() {
+        $("#selectdish").hide();
+    };
+
+    $("#selectdish").delegate(".dish", "click", function (event) {
+        overallState.initCtrl(sel, overallState.dishDeetsCtrl);
+    });
 
     // Event listener
-    function listen() {
+
+    this.listen = function() { 
         $("#dishtype").change(function(){
             var selectedType = $("#dishtype option:selected").text();
             var availableCourses = model.getAllDishes(selectedType);
@@ -10,5 +20,6 @@ var SelDishCtrl = function(view, model) {
             view.renderCourses(availableCourses);
         });
     };
-    listen();
+
+    this.listen();
  };

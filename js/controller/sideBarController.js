@@ -1,8 +1,16 @@
-var SideCtrl = function(view, model) {
+var SideCtrl = function(overallState, view, model) {
+	var side = this;
 
-	//Jquery event listener. Lyssnar efter förändringar i dropdownen.
-	//När förändring sker så kör den en funktion som sparar värdet som vi ändrar till.
-	//Det nya värdet skickas till model med setNumberOfGuests-metoden.
+	$("#sidebar").delegate("#confirmdinner", "click", function (event) {
+		overallState.initCtrl(side, overallState.sumMenuCtrl);
+	});
+
+	this.hideMe = function () {
+		$("#sidebar").hide();
+		$("#selectDishType").hide();
+		$("#dishdeets").hide();
+	};
+
 	view.displayedGuests.change(function() {
 		var selectedValue = $("#guests option:selected").val();
 		model.setNumberOfGuests(selectedValue);

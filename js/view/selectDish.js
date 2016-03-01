@@ -12,3 +12,4 @@ var SelectDish = function (container, model) {
 		}
 	};
 };
+
