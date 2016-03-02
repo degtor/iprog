@@ -24,7 +24,7 @@ var SideBar = function (container, model) {
 			if (menu === "Menu is empty!") {
 				break;
 			} else {
-				$(table).append("<tr>" + "<td>" + menu[i].name + "</td>" + "<td>" + model.getDishPrice(menu[i]) + "</td>" + "</tr>");
+				$(table).append("<tr>" + "<td>" + menu[i].Title + "</td>" + "<td>" + model.getDishPrice(menu[i]) + "</td>" + "</tr>");
 			}
 		}
 	};

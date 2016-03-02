@@ -9,7 +9,7 @@ var OverallState = function(model) {
 	this.sideCtrl = new SideCtrl(this, sideBar, model);
 	this.selectionCtrl = new SelectionCtrl(this, model);
 	this.welcomeCtrl = new WelcomeCtrl(this, model);
-	this.dishDeetsCtrl = new DishDeetsCtrl(this, sideBar, model);
+	this.dishDeetsCtrl = new DishDeetsCtrl(this, dishDeets, model);
 	this.fullPrepCtrl = new FullPrepCtrl(this, fullPrep, model);
 	this.sumMenuCtrl = new SumMenuCtrl(this, model);
 	

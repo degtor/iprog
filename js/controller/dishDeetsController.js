@@ -1,6 +1,5 @@
-var DishDeetsCtrl = function(overallState, view, model) {
+var DishDeetsCtrl = function(overallState, dishDitt, model) {
 	var dishDeet = this;
-
 	this.init = function() {
 		$("#dishdeets").show();
 	};
@@ -12,14 +11,15 @@ var DishDeetsCtrl = function(overallState, view, model) {
 	};
 
 	$("#dishdeets").delegate(".confirmbtn", "click", function(event) {
-		var clickedElementId = event.currentTarget.id;
-		var selDish = model.getDish(clickedElementId);
-		model.addDishToMenu(selDish.id);
+		console.log(dishDitt.object);
+		model.addDishToMenu(dishDitt.object);
 		overallState.initCtrl(dishDeet, overallState.selectionCtrl);
+		$("#selectionheader").show();
 	});
 
 	$("#dishdeets").delegate("#backToSelectDish", "click", function() {
 		overallState.initCtrl(dishDeet, overallState.selectionCtrl);
+		$("#selectionheader").show();
 	});
 
 };
